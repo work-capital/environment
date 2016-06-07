@@ -3,7 +3,7 @@
 #
 # Author: Henry Hazan <github.com/henry-hz> 2016
 
-LINKED_FILES=("tmux.conf" "vimrc" "zshrc")
+LINKED_FILES=("tmux/tmux.conf" "vim/vimrc" "zsh/zshrc")
 
 function main() {
   for i in ${LINKED_FILES[@]} ; do

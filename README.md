@@ -8,6 +8,11 @@ Install NeoVIM
 apt-get install jq vim neovim git gcc w3m tmux
 ```
 
+To run the scripts
+```
+chmod 777 install.sh
+chmod 777 clean.sh
+```
 
 
 
