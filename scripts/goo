@@ -1,0 +1,2 @@
+#!/bin/bash
+w3m "https://google.com/search?q=$1"

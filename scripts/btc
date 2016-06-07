@@ -1,0 +1,5 @@
+#!/bin/bash
+curl -L -s https://api.coinbase.com/v2/prices/buy | jq -r '.data.amount' | xargs -I % printf "Buy: % " &
+curl -L -s https://api.coinbase.com/v2/prices/sell | jq -r '.data.amount' | xargs -I % printf "Sell: % " &
+wait
+printf "\n"
