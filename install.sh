@@ -22,10 +22,10 @@ function setup_scripts() {
   done
 }
 
-function setup_vim() {
-  mkdir $HOME/.vim
-  mkdir $HOME/.vim/backup
-  mkdir $HOME/.vim/tmp
+function setup_nvim() {
+  mkdir $HOME/.config
+  mkdir $HOME/.config/nvim
+  ln -s $HOME/environment/init.vim $HOME/.config/nvim/init.vim
   curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
