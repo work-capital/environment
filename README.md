@@ -5,7 +5,7 @@ Dependencies
 Install NeoVIM
 
 ```
-apt-get install jq vim neovim git gcc w3m
+apt-get install jq vim neovim git gcc w3m tmux
 ```
 
 
