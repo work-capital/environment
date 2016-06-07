@@ -1,5 +1,5 @@
 #!/bin/bash
-# setup-dotfiles
+# setup environment
 #
 # Author: Henry Hazan <github.com/henry-hz> 2016
 
