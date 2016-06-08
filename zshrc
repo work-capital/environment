@@ -1,7 +1,5 @@
-# fix function buttons to be  F1 
-sudo ~/bin/fn.sh
 # Path to your oh-my-zsh installation.
-export ZSH=/home/henry/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
