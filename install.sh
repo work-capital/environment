@@ -3,7 +3,7 @@
 #
 # Author: Henry Hazan <github.com/henry-hz> 2016
 
-LINKED_FILES=("tmux.conf" "vimrc" "zshrc")
+LINKED_FILES=("tmux.conf" "vimrc" "zshrc" "gitignore")
 
 function main() {
   for i in ${LINKED_FILES[@]} ; do
@@ -38,6 +38,7 @@ function setup_zsh() {
   git clone http://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
   echo "ym.zsh-theme" >> $HOME/.oh-my-zsh/.git/info/exclude
   ln -s $HOME/environment/ym.zsh-theme $HOME/.oh-my-zsh/themes/ym.zsh-theme
+  sudo chsh -s $(which zsh)
 }
 
 

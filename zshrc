@@ -54,12 +54,13 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/home/henry/.cabal/bin:/home/henry/Library/Haskell/bin:/home/henry/.bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/henry/bin/sbt/bin:/home/henry/bin/scala/bin:/home/henry/bin/rebar3:/home/henry/bin/rebar:/home/henry/bin/spark-1.6.0/bin:/home/henry/erlang-libs/mad:/home/henry/erlang-libs/relx/_build/default/bin"
+
+
+
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
-export SCALA_HOME="/home/henry/bin/scala-2.11.7"
 
-export ERL_LIBS="/home/henry/erlang-libs"
 
 source $ZSH/oh-my-zsh.sh
 
