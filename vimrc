@@ -25,7 +25,7 @@ endif
 syntax on
 let base16colorspace=256  " Access colors present in 256 colorspace
 set background=dark
-colorscheme base16-summerfruit
+" colorscheme base16-summerfruit
 " Override colorscheme bg so they look properly under any decent terminal -
 " it's more of a hack than anything else
 "highlight Normal ctermbg=NONE
@@ -35,7 +35,7 @@ set cursorcolumn
 set listchars=trail:.,tab:--
 set tags=./tags,tags,codex.tags
 set list
-set shell=/usr/local/bin/zsh
+set shell=/bin/zsh
 
 " Look good on linux:
 if has("unix")
