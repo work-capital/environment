@@ -5,9 +5,11 @@
 
 # update 
 apt-get update
+apt-get install build-essential autoconf libncurses5-dev openssl libssl-dev fop xsltproc unixodbc-dev git tmux htop iftop iotop g++ gcc make zsh -y
 
 # ERLANG
-apt-get install build-essential autoconf libncurses5-dev openssl libssl-dev fop xsltproc unixodbc-dev git gcc make tmux htop iftop iotop
+wget https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_19.0-1~debian~jessie_amd64.deb
+dpkg -i esl-erlang_19.0-1~debian~jessie_amd64.deb
 
 # NEOVIM
 cd ~
