@@ -8,6 +8,10 @@ export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
 #ZSH_THEME="gianu"
 ZSH_THEME="bureau"
 
+
+# Only load Liquid Prompt in interactive shells, not from a script or from scp
+[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 

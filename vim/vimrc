@@ -172,3 +172,43 @@ noremap <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " Open ctags definition in a vertical split - instead of a horizontal one
 noremap <C-W><C-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
+
+set relativenumber
+autocmd BufRead,BufNewFile *.erl,*.es.*.hrl,*.yaws,*.xrl set expandtab
+au BufNewFile,BufRead *.erl,*.es,*.hrl,*.yaws,*.xrl setf erlang
+hi elixirBlockDefinition ctermfg=12
+
+
+"" FROM vim.local in HASKELL
+"" to ignore ctrl-p directories
+""let g:ctrlp_custom_ignore =
+'\v[\/](_build|deps|_rel|node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+" let g:ctrlp_custom_ignore = {
+" "     \ 'dir':
+" '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|test$|_build$|deps$|_rel$',
+" "     \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
+"
+" set
+" wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/deps/*,*/_build/*,*/_rel/*,*/node_modules/*,*/dist/*
+"
+" "" to run tests on the same file
+" ""map <C-k> :w <bar> !mix test -%:p -no-start<CR>
+" nnoremap <C-t> :w<bar>:Mix test<CR>
+" "" to getout of terminal mode in neovim
+"
+" :tnoremap <Esc> <C-\><C-n>
+"
+" "" https://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
+"
+" :tnoremap <C-J> <C-W><C-J>
+" :tnoremap <C-K> <C-W><C-K>
+" :tnoremap <C-L> <C-W><C-L>
+" :tnoremap <C-H> <C-W><C-H>
+"
+"
+" "" open in buffer mode
+" ""let g:ctrlp_cmd = 'CtrlPBuffer'

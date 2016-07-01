@@ -1,45 +1,43 @@
 #!/bin/bash
-# setup environment
-#
-# Author: Henry Hazan <github.com/henry-hz> 2016
 
-LINKED_FILES=("tmux.conf" "vimrc" "zshrc" "gitignore")
+# git
+git config --global user.email "henry@work.capital"
+git config --global user.name  "Henry Hazan"
 
-function main() {
-  for i in ${LINKED_FILES[@]} ; do
-    ln -s "$HOME/environment/$i" "$HOME/.$i"
-  done
-  setup_vim
-  setup_zsh
-  setup_git
-  setup_scripts
-}
+# vim
+ln -sf `pwd`/vim/vimrc ~/.vimrc
 
-function setup_scripts() {
-  mkdir -p $HOME/.scripts
-  for i in $HOME/environment/scripts/* ; do
-    ln -s $i $HOME/.scripts/`basename $i`
-  done
-}
+# neo-vim
+mkdir ~/.config
+mkdir ~/.config/nvim
+ln -sf `pwd`/neovim/init.vim ~/.config/nvim/init.vim
 
-function setup_nvim() {
-  mkdir $HOME/.config
-  mkdir $HOME/.config/nvim
-  ln -s $HOME/environment/init.vim $HOME/.config/nvim/init.vim
-  curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-}
+## liquidprompt
+pushd ~
+git clone https://github.com/nojhan/liquidprompt.git
+source liquidprompt/liquidprompt
+popd
 
-function setup_git() {
-  ln -s $HOME/environment/git/gitconfig $HOME/.gitconfig
-  ln -s $HOME/environment/git/gitignore $HOME/.gitignore
-}
+# zsh
+git clone http://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
+ln -sf `pwd`/zsh/zshrc ~/.zshrc
 
-function setup_zsh() {
-  git clone http://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
-  echo "ym.zsh-theme" >> $HOME/.oh-my-zsh/.git/info/exclude
-  ln -s $HOME/environment/ym.zsh-theme $HOME/.oh-my-zsh/themes/ym.zsh-theme
-  #sudo chsh -s $(which zsh)
-}
+# ack
+#ln -sf `pwd`/ack/ackrc ~/.ackrc
 
+# tmux
+ln -sf `pwd`/tmux/tmux.conf ~/.tmux.conf
 
-main
+# synergy
+#ln -sf `pwd`/synergy/synergy.conf ~/.synergy.conf
+
+# git
+ln -sf `pwd`/git/gitconfig ~/.gitconfig
+ln -sf `pwd`/git/gitignore ~/.gitignore
+
+# bins
+mkdir -p ~/.bin
+for i in `pwd`/bin/* ; do
+  ln -s $i ~/.bin/`basename $i`
+done
+

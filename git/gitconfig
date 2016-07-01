@@ -1,0 +1,50 @@
+[user]
+    name = henry_hazan
+    email = henry@work.capital
+    signingkey = DF0E4CF8
+[core]
+    editor = nvim
+    excludesfile = ~/.gitignore
+[alias]
+    pu = pull
+    ps = push
+    co = checkout
+    ci = commit
+    cia = commit --amend
+    st = status
+    br = branch
+    l = "!bash -c 'source ~/dotfiles/git/helpers.sh && pretty_git_log'"
+    tree = "log --graph --oneline --all"
+    type = cat-file -t
+    dump = cat-file -p
+    d = diff
+    dt = difftool
+    dc = diff --cached
+    aa = add --all
+    ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[push]
+    default = simple
+[merge]
+    tool = vimdiff
+[filter "media"]
+    required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[url "git@g.toggl.com:"]
+	insteadOf = https://g.toggl.com/
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[github]
+	user = yamadapc
+[url "git://github.com/ghc/packages-"]
+	insteadOf = git://github.com/ghc/packages/
