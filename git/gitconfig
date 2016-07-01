@@ -1,6 +1,6 @@
 [user]
-    name = henry_hazan
-    email = henry@work.capital
+	name = Henry Hazan
+	email = henry@work.capital
     signingkey = DF0E4CF8
 [core]
     editor = nvim

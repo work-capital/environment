@@ -2,6 +2,7 @@ Dependencies
 ============
 
 
+
 Install NeoVIM
 
 ```
@@ -25,4 +26,14 @@ Install neovim before setup the dotfiles
 
 [vimix](https://github.com/spiegela/vimix)
 
+Install
+=======
 
+You have to go to the ./environment directory before. 
+after installing, do 
+
+```
+sudo chsh -s $(which zsh)
+```
+
+In zshrc file, we make an alias vi = nvim
