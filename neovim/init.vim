@@ -1,3 +1,9 @@
+" With a map leader it's possible to do extra key combinations
+" " like <leader>w saves the current file
+if ! exists("mapleader")
+  let mapleader = ","
+  endif
+
 
 
 call plug#begin('~/.vim/plugged')
@@ -164,7 +170,30 @@ Plug 'ctrlpvim/ctrlp.vim'
         \}
 
 Plug 'tpope/vim-vinegar' " navigate up a directory with '-' in netrw, among other things
+
 Plug 'ervandew/supertab'
+
+Plug 'scrooloose/nerdtree'
+" Close nerdtree after a file is selected
+let NERDTreeQuitOnOpen = 1
+
+function! IsNERDTreeOpen()
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+function! ToggleFindNerd()
+  if IsNERDTreeOpen()
+    exec ':NERDTreeToggle'
+  else
+    exec ':NERDTreeFind'
+  endif
+endfunction
+
+" If nerd tree is closed, find current file, if open, close it
+nmap <silent> <leader>f <ESC>:call ToggleFindNerd()<CR>
+nmap <silent> <leader>F <ESC>:NERDTreeToggle<CR>
+
+
 """"" End Code Navigation ===========
 
 
@@ -268,6 +297,7 @@ nnoremap U :syntax sync fromstart<cr>:redraw!<cr>
 " Keep the cursor in place while joining lines
 nnoremap J mzJ`z
 
+
 " Split line (sister to [J]oin lines above)
 " The normal use of S is covered by cc, so don't worry about shadowing it.
 nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
@@ -288,42 +318,6 @@ vnoremap -# :s#^\###<cr>
 " Save your backups to a less annoying place than the current directory.
 " If you have .vim-backup in the current directory, it'll use that.
 " Otherwise it saves it to ~/.vim/backup or . if all else fails.
-if isdirectory($HOME . '/.vim/backup') == 0
-  :silent !mkdir -p ~/.vim/backup >/dev/null 2>&1
-endif
-set backupdir-=.
-set backupdir+=.
-set backupdir-=~/
-set backupdir^=~/.vim/backup/
-set backupdir^=./.vim-backup/
-set backup
-
-" Save your swp files to a less annoying place than the current directory.
-" If you have .vim-swap in the current directory, it'll use that.
-" Otherwise it saves it to ~/.vim/swap, ~/tmp or .
-if isdirectory($HOME . '/.vim/swap') == 0
-  :silent !mkdir -p ~/.vim/swap >/dev/null 2>&1
-endif
-set directory=./.vim-swap//
-set directory+=~/.vim/swap//
-set directory+=~/tmp//
-set directory+=.
-
-" viminfo stores the the state of your previous editing session
-set viminfo+=n~/.vim/viminfo
-
-if exists("+undofile")
-  " undofile - This allows you to use undos after exiting and restarting
-  " This, like swap and backups, uses .vim-undo first, then ~/.vim/undo
-  " :help undo-persistence
-  " This is only present in 7.3+
-  if isdirectory($HOME . '/.vim/undo') == 0
-    :silent !mkdir -p ~/.vim/undo > /dev/null 2>&1
-  endif
-  set undodir=./.vim-undo//
-  set undodir+=~/.vim/undo//
-  set undofile
-endif
 
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
@@ -408,4 +402,75 @@ command TIL tabe~/Documents/TIL.md
 """ End New things I learn =============
 
 
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/deps/*,*/_build/*,*/_rel/*,*/node_modules/*,*/dist/*
 
+"" to run tests on the same file
+""map <C-k> :w <bar> !mix test -%:p -no-start<CR>
+nnoremap <C-t> :w<bar>:Mix test<CR>
+
+"" to getout of TERMINAL mode in neovim
+:tnoremap <Esc> <C-\><C-n>
+
+"" https://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+:tnoremap <C-J> <C-W><C-J>
+:tnoremap <C-K> <C-W><C-K>
+:tnoremap <C-L> <C-W><C-L>
+:tnoremap <C-H> <C-W><C-H>
+
+
+
+
+
+
+
+""""""""""""""""""""""""""""""""""""
+""""  Backup and Undo
+""""""""""""""""""""""""""""""""""""
+
+" Turn backup off, since most stuff is in Git anyway...
+set nobackup
+set nowb
+set noswapfile
+
+
+" if isdirectory($HOME . '/.vim/backup') == 0
+"   :silent !mkdir -p ~/.vim/backup >/dev/null 2>&1
+" endif
+" set backupdir-=.
+" set backupdir+=.
+" set backupdir-=~/
+" set backupdir^=~/.vim/backup/
+" set backupdir^=./.vim-backup/
+" set backup
+"
+" " Save your swp files to a less annoying place than the current directory.
+" " If you have .vim-swap in the current directory, it'll use that.
+" " Otherwise it saves it to ~/.vim/swap, ~/tmp or .
+" if isdirectory($HOME . '/.vim/swap') == 0
+"   :silent !mkdir -p ~/.vim/swap >/dev/null 2>&1
+" endif
+" set directory=./.vim-swap//
+" set directory+=~/.vim/swap//
+" set directory+=~/tmp//
+" set directory+=.
+"
+" " viminfo stores the the state of your previous editing session
+" set viminfo+=n~/.vim/viminfo
+"
+" if exists("+undofile")
+"   " undofile - This allows you to use undos after exiting and restarting
+"   " This, like swap and backups, uses .vim-undo first, then ~/.vim/undo
+"   " :help undo-persistence
+"   " This is only present in 7.3+
+"   if isdirectory($HOME . '/.vim/undo') == 0
+"     :silent !mkdir -p ~/.vim/undo > /dev/null 2>&1
+"   endif
+"   set undodir=./.vim-undo//
+"   set undodir+=~/.vim/undo//
+"   set undofile
+" endif
