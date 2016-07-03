@@ -13,6 +13,7 @@ Plug 'vim-ruby/vim-ruby'
 
 """"""" Elixir
 Plug 'elixir-lang/vim-elixir'
+Plug 'slashmili/alchemist.vim'
 
 """"""" Elm
 Plug 'lambdatoast/elm.vim'
@@ -273,6 +274,18 @@ if has("autocmd")
 endif
 """ End UI Tweaks ======================
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" TABS   tt -> create a new tab
+""""        tn -> next tab
+""""        tp -> previous tab
+""""        tc -> close tab
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+nnoremap tt :tabnew<CR>
+nnoremap tn :tabnext<CR>
+nnoremap tp :tabprevious<CR>
+nnoremap tc :tabclose<CR>
+
 """ Keyboard shortcut setup =====================
 " Remove highlights
 " Clear the search buffer when hitting return
@@ -285,6 +298,11 @@ map <Up>    :echo "no!"<cr>
 map <Down>  :echo "no!"<cr>
 
 " Custom split opening / closing behaviour
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" OPEN/CLOSE  <ctrl> + n  -> new vsplit
+""""             <ctrl> + c  -> close window
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <C-N> :vsp .<CR>
 map <C-C> :q<CR>
 
@@ -303,7 +321,7 @@ nnoremap J mzJ`z
 nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 
 " Open the alternate file
-map ,, <C-^>
+" map ,, <C-^>
 
 " Comment/uncomment blocks by selecting them visually and using # or -#
 vnoremap # :s#^#\##<cr>
@@ -312,12 +330,6 @@ vnoremap -# :s#^\###<cr>
 """ End Keyboard shortcut setup =================
 
 """ Vim environment handling tweaks ====
-""""" BACKUP / TMP FILES
-" taken from
-" http://stackoverflow.com/questions/4331776/change-vim-swap-backup-undo-file-name
-" Save your backups to a less annoying place than the current directory.
-" If you have .vim-backup in the current directory, it'll use that.
-" Otherwise it saves it to ~/.vim/backup or . if all else fails.
 
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
@@ -427,10 +439,10 @@ nnoremap <C-H> <C-W><C-H>
 
 
 
-
-""""""""""""""""""""""""""""""""""""
-""""  Backup and Undo
-""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" BACKUPS & UNDO
+""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Turn backup off, since most stuff is in Git anyway...
 set nobackup
@@ -438,6 +450,12 @@ set nowb
 set noswapfile
 
 
+""""" BACKUP / TMP FILES  -> if you need backup anyway....
+" taken from
+" http://stackoverflow.com/questions/4331776/change-vim-swap-backup-undo-file-name
+" Save your backups to a less annoying place than the current directory.
+" If you have .vim-backup in the current directory, it'll use that.
+" Otherwise it saves it to ~/.vim/backup or . if all else fails.
 " if isdirectory($HOME . '/.vim/backup') == 0
 "   :silent !mkdir -p ~/.vim/backup >/dev/null 2>&1
 " endif
