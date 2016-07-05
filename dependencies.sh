@@ -6,7 +6,8 @@
 
 # update
 apt-get update
-apt-get install build-essential autoconf libncurses5-dev openssl libssl-dev fop xsltproc unixodbc-dev git tmux htop iftop iotop g++ gcc make zsh libwxbase3.0-0 libwxgtk3.0-0 -y
+apt-get install build-essential autoconf libncurses5-dev openssl libssl-dev fop xsltproc unixodbc-dev git tmux -y
+apt-get install htop iftop iotop g++ gcc make zsh libwxbase3.0-0 libwxgtk3.0-0 curl -y
 
 # ERLANG
 wget https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_19.0-1~debian~jessie_amd64.deb
@@ -36,7 +37,7 @@ curl https://install.meteor.com/ | sh
 pushd .
 
 #Install dependencies
-apt-get install libtool libtool-bin autoconf automake cmake libncurses5-dev g++ pkg-config unzip
+apt-get install libtool libtool-bin autoconf automake cmake libncurses5-dev g++ pkg-config unzip -y
 
 #Get or update neovim github repo
 mkdir -p ~/src

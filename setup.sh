@@ -10,6 +10,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ln -sf `pwd`/vim/vimrc ~/.vimrc
 
 # neo-vim
+mkdir ~/.config/nvim
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ln -sf `pwd`/neovim/init.vim ~/.config/nvim/init.vim
