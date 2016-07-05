@@ -6,7 +6,7 @@
 
 # update
 apt-get update
-apt-get install build-essential autoconf libncurses5-dev openssl libssl-dev fop xsltproc unixodbc-dev git tmux htop iftop iotop g++ gcc make zsh -y
+apt-get install build-essential autoconf libncurses5-dev openssl libssl-dev fop xsltproc unixodbc-dev git tmux htop iftop iotop g++ gcc make zsh libwxbase3.0-0 libwxgtk3.0-0 -y
 
 # ERLANG
 wget https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_19.0-1~debian~jessie_amd64.deb
@@ -19,7 +19,7 @@ cd node
 git checkout v6.2.2
 make
 make test
-sudo make install
+make install
 node -v
 
 # Lucky us: NPM is packaged with Node.js source so this is now installed too
@@ -36,7 +36,7 @@ curl https://install.meteor.com/ | sh
 pushd .
 
 #Install dependencies
-sudo apt-get install libtool libtool-bin autoconf automake cmake libncurses5-dev g++ pkg-config unzip
+apt-get install libtool libtool-bin autoconf automake cmake libncurses5-dev g++ pkg-config unzip
 
 #Get or update neovim github repo
 mkdir -p ~/src
