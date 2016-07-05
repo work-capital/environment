@@ -29,11 +29,25 @@ Install neovim before setup the dotfiles
 Install
 =======
 
-You have to go to the ./environment directory before. 
-after installing, do 
+You have to go to the ./environment directory before.
+after installing, do
 
 ```
 sudo chsh -s $(which zsh)
 ```
 
 In zshrc file, we make an alias vi = nvim
+
+
+After installing, install all plug-ins in VIM
+```
+:PlugInstall
+```
+
+
+### git
+
+For more aliases:
+https://gist.github.com/pksunkara/988716
+
+

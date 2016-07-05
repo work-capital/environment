@@ -174,26 +174,6 @@ Plug 'tpope/vim-vinegar' " navigate up a directory with '-' in netrw, among othe
 
 Plug 'ervandew/supertab'
 
-Plug 'scrooloose/nerdtree'
-" Close nerdtree after a file is selected
-let NERDTreeQuitOnOpen = 1
-
-function! IsNERDTreeOpen()
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
-
-function! ToggleFindNerd()
-  if IsNERDTreeOpen()
-    exec ':NERDTreeToggle'
-  else
-    exec ':NERDTreeFind'
-  endif
-endfunction
-
-" If nerd tree is closed, find current file, if open, close it
-nmap <silent> <leader>f <ESC>:call ToggleFindNerd()<CR>
-nmap <silent> <leader>F <ESC>:NERDTreeToggle<CR>
-
 
 """"" End Code Navigation ===========
 
@@ -300,9 +280,11 @@ map <Down>  :echo "no!"<cr>
 " Custom split opening / closing behaviour
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" OPEN/CLOSE  <ctrl> + n  -> new vsplit
+"""" OPEN/CLOSE  <ctrl> + n  -> new vsplit on the current directory tree
 """"             <ctrl> + c  -> close window
+""""             <ctrl> + o  -> open the current directory tree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <C-O> :e .<CR>
 map <C-N> :vsp .<CR>
 map <C-C> :q<CR>
 
@@ -492,3 +474,31 @@ set noswapfile
 "   set undodir+=~/.vim/undo//
 "   set undofile
 " endif
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" NERDTREE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" we don't need nerd tree, ctrl+o or ctrl+n is enough to see and use the tree
+
+" Plug 'scrooloose/nerdtree'
+" " Close nerdtree after a file is selected
+" let NERDTreeQuitOnOpen = 1
+"
+" function! IsNERDTreeOpen()
+"   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+" endfunction
+"
+" function! ToggleFindNerd()
+"   if IsNERDTreeOpen()
+"     exec ':NERDTreeToggle'
+"   else
+"     exec ':NERDTreeFind'
+"   endif
+" endfunction
+"
+" " If nerd tree is closed, find current file, if open, close it
+" nmap <silent> <leader>f <ESC>:call ToggleFindNerd()<CR>
+" nmap <silent> <leader>F <ESC>:NERDTreeToggle<CR>
+"

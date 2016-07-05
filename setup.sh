@@ -15,13 +15,15 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 ln -sf `pwd`/neovim/init.vim ~/.config/nvim/init.vim
 
 ## liquidprompt
-#git clone https://github.com/nojhan/liquidprompt.git
-#source liquidprompt/liquidprompt
+git clone https://github.com/nojhan/liquidprompt.git
+source liquidprompt/liquidprompt
 
 # zsh
 git clone http://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
 ln -sf `pwd`/zsh/zshrc ~/.zshrc
 #sudo chsh -s $(which zsh)
+
+
 
 # ack
 #ln -sf `pwd`/ack/ackrc ~/.ackrc

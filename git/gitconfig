@@ -1,11 +1,11 @@
 [user]
 	name = Henry Hazan
 	email = henry@work.capital
-    signingkey = DF0E4CF8
 [core]
     editor = nvim
     excludesfile = ~/.gitignore
 [alias]
+    ac = git add -A && git commit
     pu = pull
     ps = push
     co = checkout
@@ -13,7 +13,7 @@
     cia = commit --amend
     st = status
     br = branch
-    l = "!bash -c 'source ~/dotfiles/git/helpers.sh && pretty_git_log'"
+    l = "!bash -c 'source ~/environment/git/pretty.sh && pretty_git_log'"
     tree = "log --graph --oneline --all"
     type = cat-file -t
     dump = cat-file -p
@@ -45,6 +45,6 @@
 	smudge = git-lfs smudge %f
 	required = true
 [github]
-	user = yamadapc
+	user = henry-hz
 [url "git://github.com/ghc/packages-"]
 	insteadOf = git://github.com/ghc/packages/

@@ -2,20 +2,15 @@
 # install dependencies
 #
 # Author: Henry Hazan <github.com/henry-hz> 2016
+# run it as su [superuser]
 
-# update 
+# update
 apt-get update
 apt-get install build-essential autoconf libncurses5-dev openssl libssl-dev fop xsltproc unixodbc-dev git tmux htop iftop iotop g++ gcc make zsh -y
 
 # ERLANG
 wget https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_19.0-1~debian~jessie_amd64.deb
 dpkg -i esl-erlang_19.0-1~debian~jessie_amd64.deb
-
-# NEOVIM
-cd ~
-wget http://http.us.debian.org/debian/pool/main/n/neovim/neovim_0.1.3-1_amd64.deb
-dpkg -i neovim_0.1.3-1_amd64.deb
-rm dpkg -i neovim_0.1.3-1_amd64.deb
 
 # NODEJS
 cd ~
@@ -33,6 +28,31 @@ npm -v # it's alive!
 
 
 # METEOR
-curl https://install.meteor.com/ | sh 
+curl https://install.meteor.com/ | sh
 
+# NEOVIM
 
+#Save current dir
+pushd .
+
+#Install dependencies
+sudo apt-get install libtool libtool-bin autoconf automake cmake libncurses5-dev g++ pkg-config unzip
+
+#Get or update neovim github repo
+mkdir -p ~/src
+cd ~/src
+if [ ! -e ~/src/neovim ]; then
+  git clone https://github.com/neovim/neovim
+else
+  cd neovim
+  git pull origin
+fi
+
+# Build and install neovim
+cd ~/src/neovim
+make install
+
+#Restore dir
+popd
+
+echo nvim command: `which nvim`
