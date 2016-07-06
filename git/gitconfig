@@ -5,7 +5,7 @@
     editor = nvim
     excludesfile = ~/.gitignore
 [alias]
-    ac = add -A && commit
+    ac = commit -a -m
     pu = pull
     ps = push
     co = checkout
