@@ -40,6 +40,31 @@ Plug 'othree/html5.vim'
 Plug 'tpope/vim-haml'
 Plug 'slim-template/vim-slim'
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" NERDTREE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" we don't need nerd tree, ctrl+o or ctrl+n is enough to see and use the tree
+
+Plug 'scrooloose/nerdtree'
+" Close nerdtree after a file is selected
+let NERDTreeQuitOnOpen = 1
+
+function! IsNERDTreeOpen()
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+function! ToggleFindNerd()
+  if IsNERDTreeOpen()
+    exec ':NERDTreeToggle'
+  else
+    exec ':NERDTreeFind'
+  endif
+endfunction
+
+" If nerd tree is closed, find current file, if open, close it
+nmap <silent> <leader>f <ESC>:call ToggleFindNerd()<CR>
+nmap <silent> <leader>F <ESC>:NERDTreeToggle<CR>
+
 """"""" Markdown
 " Use fenced code blocks in markdown
 Plug 'jtratner/vim-flavored-markdown'
@@ -186,6 +211,10 @@ call plug#end()
 """ UI Tweaks ==========================
 set relativenumber " line numbering
 set t_Co=256 " Force 256 colors
+
+" Set the vertical split character to  a space (there is a single space after '\ ')
+set fillchars+=vert:\ 
+
 
 " Turn off menu in gui
 set guioptions="agimrLt"
@@ -375,7 +404,7 @@ func! DeleteTrailingWS()
   %s/\s\+$//ge
   exe "normal `z"
 endfunc
-au BufWrite * silent call DeleteTrailingWS()
+" au BufWrite * silent call DeleteTrailingWS()    " uncomment to turn on delete white spaces
 """"" End Normalization ================
 """ End Auto Commands ==================
 
@@ -477,28 +506,3 @@ set noswapfile
 
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" NERDTREE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" we don't need nerd tree, ctrl+o or ctrl+n is enough to see and use the tree
-
-" Plug 'scrooloose/nerdtree'
-" " Close nerdtree after a file is selected
-" let NERDTreeQuitOnOpen = 1
-"
-" function! IsNERDTreeOpen()
-"   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-" endfunction
-"
-" function! ToggleFindNerd()
-"   if IsNERDTreeOpen()
-"     exec ':NERDTreeToggle'
-"   else
-"     exec ':NERDTreeFind'
-"   endif
-" endfunction
-"
-" " If nerd tree is closed, find current file, if open, close it
-" nmap <silent> <leader>f <ESC>:call ToggleFindNerd()<CR>
-" nmap <silent> <leader>F <ESC>:NERDTreeToggle<CR>
-"

@@ -50,4 +50,12 @@ After installing, install all plug-ins in VIM
 For more aliases:
 https://gist.github.com/pksunkara/988716
 
+## synergy 
+https://toic.org/blog/2009/secure-synergy-setup/ 
+
+ssh -N -f -L 24800:localhost:24800 branko@192.168.0.100
+
+
+## boot
+http://stackoverflow.com/questions/12973777/how-to-run-a-shell-script-at-startup 
 
