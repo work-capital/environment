@@ -7,7 +7,7 @@
 # update
 apt-get update
 apt-get install build-essential autoconf libncurses5-dev openssl libssl-dev fop xsltproc unixodbc-dev git tmux -y
-apt-get install htop iftop iotop g++ gcc make zsh libwxbase3.0-0 libwxgtk3.0-0 curl autossh sudo -y
+apt-get install htop iftop iotop g++ gcc make zsh libwxbase3.0-0 libwxgtk3.0-0 curl autossh sudo xfonts-terminus -y
 
 # ERLANG
 wget https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_19.0-1~debian~jessie_amd64.deb
