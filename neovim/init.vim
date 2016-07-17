@@ -182,12 +182,14 @@ Plug 'ctrlpvim/ctrlp.vim'
         \ }
   " let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
   " let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co'] " if you want to use git for this rather than ag
+  " AcceptSelection("r") means to replace. if you want to accept and vertical
+  " open, change to AcceptSelection("v")
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_prompt_mappings = {
         \ 'AcceptSelection("e")': ['<c-e>', '<c-space>'],
         \ 'AcceptSelection("h")': ['<c-x>', '<c-cr>', '<c-s>'],
         \ 'AcceptSelection("t")': ['<c-t>'],
-        \ 'AcceptSelection("v")': ['<cr>'],
+        \ 'AcceptSelection("r")': ['<cr>'],
         \ 'PrtSelectMove("j")':   ['<c-j>', '<down>', '<s-tab>'],
         \ 'PrtSelectMove("k")':   ['<c-k>', '<up>', '<tab>'],
         \ 'PrtHistory(-1)':       ['<c-n>'],
@@ -313,8 +315,9 @@ map <Down>  :echo "no!"<cr>
 """"             <ctrl> + c  -> close window
 """"             <ctrl> + o  -> open the current directory tree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <C-O> :e .<CR>
+set splitright        "to make vsplit put the new buffer on the right of the current buffer
 map <C-N> :vsp .<CR>
+map <C-O> :terminal<CR>
 map <C-C> :q<CR>
 
 " reselect pasted content:
