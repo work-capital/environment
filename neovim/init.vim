@@ -104,6 +104,11 @@ Plug 'tomtom/tcomment_vim'  " Line commenting
   " By default, `gc` will toggle comments
 
 Plug 'janko-m/vim-test'                " Run tests with varying granularity
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" VIM-TEST   ,t -> test the nearest file (considering the leader is ','
+""""            ,T -> test file
+""""            etc...
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   nmap <silent> <leader>t :TestNearest<CR>
   nmap <silent> <leader>T :TestFile<CR>
   nmap <silent> <leader>a :TestSuite<CR>
