@@ -40,6 +40,9 @@ ln -sf `pwd`/tmux/tmux.conf ~/.tmux.conf
 ln -sf `pwd`/git/gitconfig ~/.gitconfig
 ln -sf `pwd`/git/gitignore ~/.gitignore
 
+# vimperator [firefox]
+ln -sf `pwd`/vimperator/vimperatorrc ~/.vimperatorrc
+
 # bins
 mkdir -p ~/.bin
 for i in `pwd`/bin/* ; do

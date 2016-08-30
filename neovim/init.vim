@@ -8,6 +8,12 @@ if ! exists("mapleader")
 
 call plug#begin('~/.vim/plugged')
 
+""""""" Purescript
+"Plug 'raichoo/purescript-vim'
+
+""""""" Scala
+""Plug 'derekwyatt/vim-scala'
+
 """"""" Ruby
 Plug 'vim-ruby/vim-ruby'
 
@@ -127,8 +133,8 @@ Plug 'mattn/gist-vim'                  " create gists trivially from buffer, sel
     let g:gist_clip_command = 'pbcopy'
   endif
 
-Plug 'sjl/gundo.vim'
-  nnoremap <F5> :GundoToggle<CR>
+" Plug 'sjl/gundo.vim'
+"   nnoremap <F5> :GundoToggle<CR>
 """"" End Utilities ====================
 
 """"" UI Plugs =======================
@@ -182,7 +188,7 @@ Plug 'ctrlpvim/ctrlp.vim'
   let g:ctrlp_working_path_mode = ''
   let g:ctrlp_dont_split = 'NERD_tree_2' " don't split these buffers
   let g:ctrlp_custom_ignore = {
-        \ 'dir':  '\v[\/]\.(git|hg|svn|gitkeep)$',
+        \ 'dir':  '\v[\/]\.(git|hg|svn|gitkeep|docs\)$',
         \ 'file': '\v\.(exe|so|dll|log|gif|jpg|jpeg|png|psd|DS_Store|ctags|gitattributes)$'
         \ }
   " let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
@@ -454,7 +460,28 @@ nnoremap <C-H> <C-W><C-H>
 :tnoremap <C-H> <C-W><C-H>
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" COLORS in TERMINAL inside neovim
+"""" https://github.com/neovim/neovim/issues/2897#issuecomment-115464516
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
+let g:terminal_color_0  = '#2e3436'
+let g:terminal_color_1  = '#cc0000'
+let g:terminal_color_2  = '#4e9a06'
+let g:terminal_color_3  = '#c4a000'
+let g:terminal_color_4  = '#3465a4'
+let g:terminal_color_5  = '#75507b'
+let g:terminal_color_6  = '#0b939b'
+let g:terminal_color_7  = '#d3d7cf'
+let g:terminal_color_8  = '#555753'
+let g:terminal_color_9  = '#ef2929'
+let g:terminal_color_10 = '#8ae234'
+let g:terminal_color_11 = '#fce94f'
+let g:terminal_color_12 = '#729fcf'
+let g:terminal_color_13 = '#ad7fa8'
+let g:terminal_color_14 = '#00f5e9'
+let g:terminal_color_15 = '#eeeeec'
 
 
 
@@ -467,6 +494,14 @@ nnoremap <C-H> <C-W><C-H>
 set nobackup
 set nowb
 set noswapfile
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" BUFFERS HELPERS
+"""" <F5>  - show buffers
+""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+:nnoremap <F5> :buffers<CR>:buffer<Space>
 
 
 """"" BACKUP / TMP FILES  -> if you need backup anyway....
