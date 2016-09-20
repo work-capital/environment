@@ -121,7 +121,7 @@ Plug 'janko-m/vim-test'                " Run tests with varying granularity
   nmap <silent> <leader>l :TestLast<CR>
   nmap <silent> <leader>g :TestVisit<CR>
 
-Plug 'christoomey/vim-tmux-navigator'  " Navigate between tmux panes and vim splits seamlessly
+"" Plug 'christoomey/vim-tmux-navigator'  " Navigate between tmux panes and vim splits seamlessly [neovim has term!]
 Plug 'tpope/vim-fugitive'              " git support from dat tpope
 Plug 'vim-scripts/SyntaxRange'         " Allow ranges within a file to define different syntax mappings
 Plug 'mattn/webapi-vim' 		           " vim interface to web apis.  Required for gist-vim
@@ -167,7 +167,7 @@ Plug 'vim-airline/vim-airline'   " UI status bar
 Plug 'vim-airline/vim-airline-themes'
 Plug 'chriskempson/base16-vim' " base16 theme
 Plug 'dandorman/vim-colors'
-Plug 'roman/golden-ratio'
+"" Plug 'roman/golden-ratio'    " http://stackoverflow.com/questions/11634804/vim-auto-resize-focused-window
 """"" End UI Plugs ===================
 
 """"" Code Navigation ===============
