@@ -30,10 +30,12 @@ Install
 =======
 
 You have to go to the ./environment directory before.
-after installing, do
+after installing, do 
+http://askubuntu.com/questions/131823/cant-make-zsh-the-default-shell 
 
 ```
-sudo chsh -s $(which zsh)
+su user
+chsh -s $(which zsh)
 ```
 
 In zshrc file, we make an alias vi = nvim
