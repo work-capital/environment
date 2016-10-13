@@ -181,7 +181,7 @@ hi elixirBlockDefinition ctermfg=12
 
 "" FROM vim.local in HASKELL
 "" to ignore ctrl-p directories
-""let g:ctrlp_custom_ignore =
+let g:ctrlp_custom_ignore =
 '\v[\/](_build|deps|_rel|node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 " let g:ctrlp_custom_ignore = {
 " "     \ 'dir':
