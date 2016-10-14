@@ -140,3 +140,7 @@ echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode | grep "hack to hide t
 
 # to use the webcam without the light room interferences
 v4l2-ctl --set-ctrl power_line_frequency=1
+
+# to fix hipchat crash
+# https://answers.atlassian.com/questions/39138911/how-to-work-a-round-or-fix-hipchat4-client-crashes-on-linux
+alias hipchat="hipchat4 --disable-gpu"
