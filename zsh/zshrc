@@ -135,5 +135,5 @@ export TERM="xterm-256color"
 
 # save you from use FN button when you want F1, F2 keys, and output to error instead
 # of printing 2
-#echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode | grep "hack to hide the output"
+echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode | grep "hack to hide the output"
 #export PATH=$PATH:/home/henry/bin/robomongo-0.9.0-rc9-linux-x86_64-0bb5668/bin
