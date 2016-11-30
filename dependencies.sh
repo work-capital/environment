@@ -59,6 +59,9 @@ fi
 cd ~/src/neovim
 make install
 
+# to run ctrl-p VIM plugin
+apt-get install silversearcher-ag-el
+
 #Restore dir
 popd
 
