@@ -12,7 +12,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'raichoo/purescript-vim'
 
 """"""" Scala
-""Plug 'derekwyatt/vim-scala'
+Plug 'derekwyatt/vim-scala'
 
 """"""" Ruby
 Plug 'vim-ruby/vim-ruby'
