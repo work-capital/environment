@@ -122,6 +122,7 @@ Plug 'janko-m/vim-test'                " Run tests with varying granularity
   nmap <silent> <leader>g :TestVisit<CR>
 
 "" Plug 'christoomey/vim-tmux-navigator'  " Navigate between tmux panes and vim splits seamlessly [neovim has term!]
+Plug 'Lokaltog/vim-easymotion'       " easily jumps
 Plug 'tpope/vim-fugitive'              " git support from dat tpope
 Plug 'vim-scripts/SyntaxRange'         " Allow ranges within a file to define different syntax mappings
 Plug 'mattn/webapi-vim' 		           " vim interface to web apis.  Required for gist-vim
