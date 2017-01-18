@@ -8,6 +8,8 @@ if ! exists("mapleader")
 
 call plug#begin('~/.vim/plugged')
 
+""""""" Elm
+Plug 'elmcast/elm-vim'
 """"""" Purescript
 "Plug 'raichoo/purescript-vim'
 
