@@ -95,6 +95,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 alias vi="nvim"
+
 #
 export TERM="xterm-256color"
 
@@ -150,3 +151,13 @@ PATH=$PATH:/usr/lib/google-cloud-sdk/bin
 # downloaded exlixir releases
 PATH=$PATH:/home/henry/bin/elixir-1.4.0-rc.1/bin
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/henry/bin/google-cloud-sdk/path.zsh.inc' ]; then source '/home/henry/bin/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/henry/bin/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/henry/bin/google-cloud-sdk/completion.zsh.inc'; fi
+
+export KUBE_EDITOR=nvim
+alias k=kubectl
+source <(kubectl completion zsh)
