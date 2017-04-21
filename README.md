@@ -1,6 +1,18 @@
 Dependencies
 ============
 
+If you want to permantelly allow sudo:
+
+```
+su
+visudo
+```
+
+and add this line:
+```
+your_user_name ALL = NOPASSWD: ALL
+
+
 
 Install NeoVIM
 
