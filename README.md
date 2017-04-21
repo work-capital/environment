@@ -2,7 +2,6 @@ Dependencies
 ============
 
 
-
 Install NeoVIM
 
 ```
@@ -61,3 +60,7 @@ ssh -N -f -L 24800:localhost:24800 branko@192.168.0.100
 ## boot
 http://stackoverflow.com/questions/12973777/how-to-run-a-shell-script-at-startup 
 
+
+
+See [here](https://xaizek.github.io/2016-08-13/big-list-of-vim-like-software/)
+for more VI-like applications
