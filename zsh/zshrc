@@ -148,7 +148,6 @@ PATH=$PATH:/home/henry/environment/bin
 # google sdk
 PATH=$PATH:/usr/lib/google-cloud-sdk/bin
 
-
 export KUBE_EDITOR=nvim
 alias k=kubectl
 source <(kubectl completion zsh)
