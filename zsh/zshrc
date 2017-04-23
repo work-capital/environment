@@ -148,9 +148,6 @@ PATH=$PATH:/home/henry/environment/bin
 # google sdk
 PATH=$PATH:/usr/lib/google-cloud-sdk/bin
 
-# downloaded exlixir releases
-PATH=$PATH:/home/henry/bin/elixir-1.4.0-rc.1/bin
-
 
 export KUBE_EDITOR=nvim
 alias k=kubectl
