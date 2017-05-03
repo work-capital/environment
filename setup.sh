@@ -34,7 +34,7 @@ ln -sf `pwd`/zsh/zshrc ~/.zshrc
 ln -sf `pwd`/tmux/tmux.conf ~/.tmux.conf
 
 # i3
-ln -sf `pwd`/i3/config ~/.config/i3/config
+#ln -sf `pwd`/i3/config ~/.config/i3/config
 
 # synergy
 #ln -sf `pwd`/synergy/synergy.conf ~/.synergy.conf

@@ -59,7 +59,12 @@ plugins=(git)
 
 # User configuration
 
-
+# lazy git
+function lazygit() {
+    git add .
+    git commit -a -m "$1"
+    git push
+}
 
 
 
