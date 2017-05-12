@@ -67,6 +67,15 @@ function lazygit() {
 }
 
 
+# set kubect namespace
+function setnamespace() {
+  kubectl config set-context $(kubectl config current-context) --namespace="$1"
+}
+
+# hibernate [apt-get install hibernate] before
+function hibe() {
+  sudo hibernate -k -v 4
+}
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
