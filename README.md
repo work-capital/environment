@@ -76,3 +76,8 @@ http://stackoverflow.com/questions/12973777/how-to-run-a-shell-script-at-startup
 
 See [here](https://xaizek.github.io/2016-08-13/big-list-of-vim-like-software/)
 for more VI-like applications
+
+
+### java
+
+https://www.digitalocean.com/community/tutorials/how-to-install-java-on-ubuntu-with-apt-get 
