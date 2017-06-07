@@ -1,6 +1,13 @@
 Dependencies
 ============
 
+
+### java
+
+https://www.digitalocean.com/community/tutorials/how-to-install-java-on-ubuntu-with-apt-get 
+
+### sudo
+
 If you want to permantelly allow sudo:
 
 ```
@@ -78,6 +85,4 @@ See [here](https://xaizek.github.io/2016-08-13/big-list-of-vim-like-software/)
 for more VI-like applications
 
 
-### java
 
-https://www.digitalocean.com/community/tutorials/how-to-install-java-on-ubuntu-with-apt-get 
