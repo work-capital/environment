@@ -8,7 +8,7 @@ if ! exists("mapleader")
 
 call plug#begin('~/.vim/plugged')
 
-
+Plug 'tpope/vim-cucumber'
 Plug 'wannesm/wmgraphviz.vim'
 
 """"""" Elm
