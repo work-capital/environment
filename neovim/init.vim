@@ -11,8 +11,22 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-cucumber'
 Plug 'wannesm/wmgraphviz.vim'
 
+"""""" Typescript
+"Plug 'mhartington/nvim-typescript'
+" Plug 'Shougo/vimproc.vim'
+" Plug 'Quramy/tsuquyomi'
+" Plug
+Plug 'Shougo/deoplete.nvim'
+Plug 'mhartington/nvim-typescript'
+Plug 'leafgarland/typescript-vim'
+
+
+" Enable deoplete at startup
+
+  let g:deoplete#enable_at_startup = 1
+
 """"""" Elm
-Plug 'elmcast/elm-vim'
+"Plug 'elmcast/elm-vim'
 
 
 """"""" Auto complete
