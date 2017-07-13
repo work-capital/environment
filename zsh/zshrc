@@ -174,4 +174,5 @@ alias k=kubectl
 source <(kubectl completion zsh)
 
 export PATH=$PATH:/usr/local/go/bin
+export CHROME_BIN=vivaldi-stable
 

@@ -17,7 +17,7 @@ Plug 'wannesm/wmgraphviz.vim'
 " Plug 'Quramy/tsuquyomi'
 " Plug
 Plug 'Shougo/deoplete.nvim'
-Plug 'mhartington/nvim-typescript'
+" Plug 'mhartington/nvim-typescript'
 Plug 'leafgarland/typescript-vim'
 
 
@@ -371,7 +371,7 @@ map <Down>  :echo "no!"<cr>
 set splitright        "to make vsplit put the new buffer on the right of the current buffer
 map <C-N> :vsp .<CR>
 map <C-O> :terminal<CR>
-map <C-C> :q<CR>
+map <C-W> :q<CR>
 
 " reselect pasted content:
 noremap gV `[v`]
