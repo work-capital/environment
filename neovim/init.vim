@@ -371,7 +371,7 @@ map <Down>  :echo "no!"<cr>
 set splitright        "to make vsplit put the new buffer on the right of the current buffer
 map <C-N> :vsp .<CR>
 map <C-O> :terminal<CR>
-map <C-W> :q<CR>
+map <C-C> :q<CR>
 
 " reselect pasted content:
 noremap gV `[v`]
