@@ -33,6 +33,13 @@ chmod 777 install.sh
 chmod 777 clean.sh
 ```
 
+## i3
+
+to fix resolution on hidpi monitors
+
+```
+https://unix.stackexchange.com/questions/267885/how-do-i-scale-i3-window-manager-for-my-hidpi-display
+```
 
 
 

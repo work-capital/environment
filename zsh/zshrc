@@ -154,7 +154,7 @@ echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode | grep "hack to hide t
 #export PATH=$PATH:/home/henry/bin/robomongo-0.9.0-rc9-linux-x86_64-0bb5668/bin
 
 # to use the webcam without the light room interferences
-v4l2-ctl --set-ctrl power_line_frequency=1
+# v4l2-ctl --set-ctrl power_line_frequency=1
 
 # some helper scripts
 PATH=$PATH:/home/henry/environment/bin
@@ -162,9 +162,6 @@ PATH=$PATH:/home/henry/environment/bin
 # google sdk
 PATH=$PATH:/usr/lib/google-cloud-sdk/bin
 
-export KUBE_EDITOR=nvim
-alias k=kubectl
-source <(kubectl completion zsh)
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/henry/google-cloud-sdk/path.zsh.inc' ]; then source '/home/henry/google-cloud-sdk/path.zsh.inc'; fi
@@ -172,6 +169,9 @@ if [ -f '/home/henry/google-cloud-sdk/path.zsh.inc' ]; then source '/home/henry/
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/henry/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/henry/google-cloud-sdk/completion.zsh.inc'; fi
 
+export KUBE_EDITOR=nvim
+alias k=kubectl
+source <(kubectl completion zsh)
 
 export PATH=$PATH:/usr/local/go/bin
 

@@ -11,32 +11,18 @@ apt-get install build-essential autoconf libncurses5-dev openssl libssl-dev fop 
 apt-get install htop iftop iotop g++ gcc make libwxbase3.0-0 libwxgtk3.0-0 curl autossh sudo xfonts-terminus -y
 
 # ERLANG
-wget https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_19.3-1~ubuntu~xenial_amd64.deb
-dpkg -i esl-erlang_19.3-1~ubuntu~xenial_amd64.deb
+# wget https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_19.3-1~ubuntu~xenial_amd64.deb
+# dpkg -i esl-erlang_19.3-1~ubuntu~xenial_amd64.deb
 
 # ELIXIR
-wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb
-dpkg -i erlang-solutions_1.0_all.deb
-apt-get update
-apt-get install elixir -y
+#wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb
+#dpkg -i erlang-solutions_1.0_all.deb
+#apt-get update
+#apt-get install elixir -y
 
 # NODEJS
-cd ~
-git clone https://github.com/nodejs/node
-cd node
-git checkout v6.2.2
-make
-make test
-make install
-node -v
-
-# Lucky us: NPM is packaged with Node.js source so this is now installed too
-# curl http://npmjs.org/install.sh | sudo sh
-npm -v # it's alive!
 
 
-# METEOR
-curl https://install.meteor.com/ | sh
 
 # NEOVIM
 
