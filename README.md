@@ -2,6 +2,23 @@ Dependencies
 ============
 
 
+To solve the high CPU issue in macbooks see: 
+
+https://askubuntu.com/questions/444005/what-is-causing-ubuntu-on-macbook-pro-to-have-high-cpu-usage
+
+https://askubuntu.com/questions/176565/why-does-kworker-cpu-usage-get-so-high/233947#233947
+
+### wifi
+
+Install the broadcom-sta-dkms, but before, add to packages
+/etc/apt/sources.list
+```
+deb http://ftp.de.debian.org/debian jessie-backports main non-free
+```
+
+
+
+
 ### java
 
 https://www.digitalocean.com/community/tutorials/how-to-install-java-on-ubuntu-with-apt-get 
@@ -27,7 +44,7 @@ Install NeoVIM
 apt-get install jq vim neovim git gcc w3m tmux
 ```
 
-To run the scripts
+o run the scripts
 ```
 chmod 777 install.sh
 chmod 777 clean.sh
@@ -35,7 +52,19 @@ chmod 777 clean.sh
 
 ## i3
 
-to fix resolution on hidpi monitors
+to fix resolution on hidpi monitors, create a file on home dir ~/.Xresources
+with: 
+
+```
+! Fonts {{{
+Xft.antialias: true
+Xft.hinting:   true
+Xft.rgba:      rgb
+Xft.hintstyle: hintfull
+Xft.dpi:       140
+! }}}
+```
+or see:
 
 ```
 https://unix.stackexchange.com/questions/267885/how-do-i-scale-i3-window-manager-for-my-hidpi-display
