@@ -33,18 +33,18 @@ pushd .
 apt-get install libtool libtool-bin autoconf automake cmake libncurses5-dev g++ pkg-config unzip -y
 
 #Get or update neovim github repo
-mkdir -p ~/src
-cd ~/src
-if [ ! -e ~/src/neovim ]; then
-  git clone https://github.com/neovim/neovim
-else
-  cd neovim
-  git pull origin
-fi
+# mkdir -p ~/src
+# cd ~/src
+# if [ ! -e ~/src/neovim ]; then
+#   git clone https://github.com/neovim/neovim
+# else
+#   cd neovim
+#   git pull origin
+# fi
 
 # Build and install neovim
-cd ~/src/neovim
-make install
+# cd ~/src/neovim
+# make install
 
 # to run ctrl-p VIM plugin
 apt-get install silversearcher-ag-el
