@@ -17,6 +17,7 @@ Plug 'wannesm/wmgraphviz.vim'
 " Plug 'Quramy/tsuquyomi'
 " Plug
 Plug 'Shougo/deoplete.nvim'
+
 " Plug 'mhartington/nvim-typescript'
 Plug 'leafgarland/typescript-vim'
 

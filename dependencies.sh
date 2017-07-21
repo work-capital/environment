@@ -25,6 +25,12 @@ apt-get install htop iftop iotop g++ gcc make libwxbase3.0-0 libwxgtk3.0-0 curl 
 
 
 # NEOVIM
+# https://stackoverflow.com/questions/31902197/support-doesnt-work
+# after in nvim, :UpdateRemotePlugins
+
+apt-get install python3-pip
+pip3 install neovim
+
 
 #Save current dir
 pushd .
