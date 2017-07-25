@@ -1,3 +1,6 @@
+" for Elixir support in neovim, see:
+" https://www.dailydrip.com/topics/elixirsips/drips/neovim-for-elixir
+"
 " With a map leader it's possible to do extra key combinations
 " " like <leader>w saves the current file
 if ! exists("mapleader")
@@ -16,7 +19,30 @@ Plug 'wannesm/wmgraphviz.vim'
 " Plug 'Shougo/vimproc.vim'
 " Plug 'Quramy/tsuquyomi'
 " Plug
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  let g:deoplete#enable_at_startup = 1
+  inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
+Plug 'powerman/vim-plugin-AnsiEsc'
+
+
+" Execute code checks, find mistakes, in the background
+Plug 'neomake/neomake'
+  " Run Neomake when I save any buffer
+  augroup localneomake
+    autocmd! BufWritePost * Neomake
+  augroup END
+  " Don't tell me to use smartquotes in markdown ok?
+  let g:neomake_markdown_enabled_makers = []
+
+Plug 'c-brenn/phoenix.vim'
+Plug 'tpope/vim-projectionist' " required for some navigation features
+
+
+Plug 'sheerun/vim-polyglot'
+
+Plug 'tomasr/molokai'
+
 
 " Plug 'mhartington/nvim-typescript'
 Plug 'leafgarland/typescript-vim'
