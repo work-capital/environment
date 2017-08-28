@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # git
-git config --global user.email "henry@work.capital"
-git config --global user.name  "Henry Hazan"
+git config --global user.email "shulamit@work.capital"
+git config --global user.name  "Shulamit Charedim"
 
 # vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
