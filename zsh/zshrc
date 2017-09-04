@@ -67,10 +67,10 @@ function lazygit() {
 }
 
 
-# set kubect namespace
-function setnamespace() {
-  kubectl config set-context $(kubectl config current-context) --namespace="$1"
-}
+# # set kubect namespace
+# function setnamespace() {
+#   kubectl config set-context $(kubectl config current-context) --namespace="$1"
+# }
 
 # hibernate [apt-get install hibernate] before
 function hibe() {
@@ -150,29 +150,29 @@ export TERM="xterm-256color"
 
 # save you from use FN button when you want F1, F2 keys, and output to error instead
 # of printing 2
-echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode | grep "hack to hide the output"
-#export PATH=$PATH:/home/henry/bin/robomongo-0.9.0-rc9-linux-x86_64-0bb5668/bin
+#echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode | grep "hack to hide the output"
+#export PATH=$PATH:/home/shulamit/bin/robomongo-0.9.0-rc9-linux-x86_64-0bb5668/bin
 
 # to use the webcam without the light room interferences
 # v4l2-ctl --set-ctrl power_line_frequency=1
 
 # some helper scripts
-PATH=$PATH:/home/henry/environment/bin
+PATH=$PATH:/home/shulamit/environment/bin
 
-# google sdk
-PATH=$PATH:/usr/lib/google-cloud-sdk/bin
+# # google sdk
+# PATH=$PATH:/usr/lib/google-cloud-sdk/bin
 
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/henry/google-cloud-sdk/path.zsh.inc' ]; then source '/home/henry/google-cloud-sdk/path.zsh.inc'; fi
+# if [ -f '/home/shulamit/google-cloud-sdk/path.zsh.inc' ]; then source '/home/shulamit/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/henry/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/henry/google-cloud-sdk/completion.zsh.inc'; fi
+# if [ -f '/home/shulamit/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/shulamit/google-cloud-sdk/completion.zsh.inc'; fi
 
-export KUBE_EDITOR=nvim
-alias k=kubectl
-source <(kubectl completion zsh)
-
-export PATH=$PATH:/usr/local/go/bin
-export CHROME_BIN=vivaldi-stable
-
+# export KUBE_EDITOR=nvim
+# alias k=kubectl
+# source <(kubectl completion zsh)
+#
+# export PATH=$PATH:/usr/local/go/bin
+# export CHROME_BIN=vivaldi-stable
+debian-config

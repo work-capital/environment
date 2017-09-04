@@ -1,6 +1,6 @@
 [user]
-	name = Henry Hazan
-	email = henry@work.capital
+	name = Shulamit Charedim
+	email = shulamit@work.capital
 [core]
     editor = nvim
     excludesfile = ~/.gitignore
