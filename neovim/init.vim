@@ -11,6 +11,13 @@ if ! exists("mapleader")
 
 call plug#begin('~/.vim/plugged')
 
+" Add VTerm and Term commands to open terminal easily
+Plug 'mklabs/split-term.vim' 
+  set splitbelow
+  set splitright
+  " open terminal below with 11 lines height
+  map <C-O> :11Term<CR>  
+
 Plug 'tpope/vim-cucumber'
 Plug 'wannesm/wmgraphviz.vim'
 
@@ -397,7 +404,6 @@ map <Down>  :echo "no!"<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set splitright        "to make vsplit put the new buffer on the right of the current buffer
 map <C-N> :vsp .<CR>
-map <C-O> :terminal<CR>
 map <C-C> :q<CR>
 
 " reselect pasted content:
