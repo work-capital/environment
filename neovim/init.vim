@@ -8,6 +8,10 @@ if ! exists("mapleader")
   endif
 
 
+" save quick
+inoremap <C-s> <esc>:w<cr>
+nnoremap <C-s> :w<cr>
+
 
 call plug#begin('~/.vim/plugged')
 
