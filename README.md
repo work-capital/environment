@@ -100,6 +100,17 @@ After installing, install all plug-ins in VIM
 :PlugInstall
 ```
 
+### idris
+
+```
+sudo apt install haskell-platform
+sudo apt install libncurses5-dev
+mkdir Idris
+cd Idris
+cabal update
+cabal sandbox init
+cabal install idris
+```
 
 ### git
 
