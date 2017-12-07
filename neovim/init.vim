@@ -24,6 +24,7 @@ Plug 'mklabs/split-term.vim'
 
 Plug 'tpope/vim-cucumber'
 Plug 'wannesm/wmgraphviz.vim'
+Plug 'idris-hackers/idris-vim'
 
 """""" Typescript
 "Plug 'mhartington/nvim-typescript'
