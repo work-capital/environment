@@ -24,7 +24,12 @@ Plug 'mklabs/split-term.vim'
 
 Plug 'tpope/vim-cucumber'
 Plug 'wannesm/wmgraphviz.vim'
+
+""""" Idris programming language
 Plug 'idris-hackers/idris-vim'
+
+""""" Slim html template engine
+Plug 'slime-lang/vim-slime-syntax'
 
 """""" Typescript
 "Plug 'mhartington/nvim-typescript'

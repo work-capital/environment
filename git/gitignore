@@ -32,7 +32,7 @@ nohup.out
 *.log
 .iml
 .rebar3
-_*
+_build
 .eunit
 *.o
 *.beam
@@ -71,3 +71,4 @@ src/counter_aggregate.erl
 mix.lock
 *.aof
 dump.rdb
+rel
