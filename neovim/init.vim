@@ -14,6 +14,9 @@ nnoremap <C-s> :w<cr>
 
 
 call plug#begin('~/.vim/plugged')
+" Autoformat code. try f3
+Plug 'Chiel92/vim-autoformat'
+
 
 " Add VTerm and Term commands to open terminal easily
 Plug 'mklabs/split-term.vim' 
@@ -586,7 +589,8 @@ set noswapfile
 """" <F5>  - show buffers
 """"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:nnoremap <F5> :buffers<CR>:buffer<Space>
+" :nnoremap <F5> :buffers<CR>:buffer<Space>
+:nnoremap <F5> :Mix compile<CR>
 
 
 """"" BACKUP / TMP FILES  -> if you need backup anyway....
