@@ -31,6 +31,20 @@ Plug 'wannesm/wmgraphviz.vim'
 """"" Idris programming language
 Plug 'idris-hackers/idris-vim'
 
+Plug 'jpalardy/vim-slime'
+" ,rs	Send selected text to tmux
+" ,rv	Change tmux session, window, and pane attachment
+let g:slime_target = "tmux"
+let g:slime_no_mappings = 1   " we want C-c to not conflict with closing pane, so this deactivate default mappings
+"let g:slime_default_config = {"x": split($TMUX, ",")[0], "target_pane": ":.2"}
+
+xmap <leader>s <Plug>SlimeRegionSend
+nmap <leader>s <Plug>SlimeMotionSend
+nmap <leader>ss <Plug>SlimeLineSend
+
+
+
+
 """"" Slim html template engine
 Plug 'slime-lang/vim-slime-syntax'
 

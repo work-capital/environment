@@ -16,6 +16,27 @@ Install the broadcom-sta-dkms, but before, add to packages
 deb http://ftp.de.debian.org/debian jessie-backports main non-free
 ```
 
+### tmux
+
+You can test it by creating a background/daemonized tmux session named $SESSION like so : 
+
+tmux new-session -d -s $SESSION 
+you can monitor this session in another terminal by using : 
+
+tmux attach-session -t $SESSION 
+and then using this command from the "non tmux" terminal 
+
+tmux send-keys -t $SESSION:0.42 
+and then if the pane 42 doesnt exist, tmux will complain. 
+
+Now by using a test string, like so : 
+
+tmux send-keys -t $SESSION:0.42 "test" C-m 
+You can pinpoint the exact pane interactively if you don't know the exact pane number that you want. 
+
+On a side note, you can display pane numbers inside a tmux session by entering (listed in the key bindings session of the documentation you linked) 
+
+    C-b q           Briefly display pane indexes.
 
 
 
