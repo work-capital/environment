@@ -7,11 +7,12 @@ export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="gianu"
 #ZSH_THEME="tonotdo"
-ZSH_THEME="fishy"
+ZSH_THEME="refined"
+#ZSH_THEME="refined"
 
 
 # Only load Liquid Prompt in interactive shells, not from a script or from scp
-[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
+# [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -184,3 +185,8 @@ export ELIXIR_EDITOR=gedit
 export PATH=/home/henry/anaconda3/bin:$PATH
 export PATH=/home/henry/idris/.cabal-sandbox/bin:$PATH
 export PATH=/home/henry/bin:$PATH
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

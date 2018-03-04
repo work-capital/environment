@@ -18,6 +18,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'Chiel92/vim-autoformat'
 
 
+
 " Add VTerm and Term commands to open terminal easily
 Plug 'mklabs/split-term.vim' 
   set splitbelow
@@ -53,9 +54,17 @@ Plug 'slime-lang/vim-slime-syntax'
 " Plug 'Shougo/vimproc.vim'
 " Plug 'Quramy/tsuquyomi'
 " Plug
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  let g:deoplete#enable_at_startup = 1
-  inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+"let g:deoplete#enable_at_startup = 1
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"   let g:deoplete#enable_at_startup = 1
+"   inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 Plug 'powerman/vim-plugin-AnsiEsc'
 
@@ -545,7 +554,8 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/deps/
 
 "" to run tests on the same file
 ""map <C-k> :w <bar> !mix test -%:p -no-start<CR>
-nnoremap <C-t> :w<bar>:Mix test<CR>
+" nnoremap <C-t> :w<bar>:Mix test<CR>
+nnoremap <C-t> :e .<CR>
 
 "" to getout of TERMINAL mode in neovim
 :tnoremap <Esc> <C-\><C-n>
