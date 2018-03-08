@@ -17,6 +17,10 @@ inoremap <C-k> <esc>:e .<cr>
 nnoremap <C-k> :e .<cr>
 
 call plug#begin('~/.vim/plugged')
+" Autoformat code. try f3
+Plug 'Chiel92/vim-autoformat'
+
+
 
 " Add VTerm and Term commands to open terminal easily
 Plug 'mklabs/split-term.vim' 
@@ -49,13 +53,21 @@ nmap <leader>ss <Plug>SlimeLineSend
 Plug 'slime-lang/vim-slime-syntax'
 
 """""" Typescript
-"Plug 'mhartington/nvim-typescript'
+Plug 'mhartington/nvim-typescript'
 " Plug 'Shougo/vimproc.vim'
 " Plug 'Quramy/tsuquyomi'
 " Plug
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  let g:deoplete#enable_at_startup = 1
-  inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"   let g:deoplete#enable_at_startup = 1
+"   inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 Plug 'powerman/vim-plugin-AnsiEsc'
 
@@ -78,6 +90,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tomasr/molokai'
 
 
+
 " Plug 'mhartington/nvim-typescript'
 Plug 'leafgarland/typescript-vim'
 
@@ -91,6 +104,66 @@ Plug 'leafgarland/typescript-vim'
 
 
 """"""" Auto complete
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+
+" Set bin if you have many instalations
+let g:deoplete#sources#ternjs#tern_bin = '/path/to/tern_bin'
+let g:deoplete#sources#ternjs#timeout = 1
+
+" Whether to include the types of the completions in the result data. Default: 0
+let g:deoplete#sources#ternjs#types = 1
+
+" Whether to include the distance (in scopes for variables, in prototypes for 
+" properties) between the completions and the origin position in the result 
+" data. Default: 0
+let g:deoplete#sources#ternjs#depths = 1
+
+" Whether to include documentation strings (if found) in the result data.
+" Default: 0
+let g:deoplete#sources#ternjs#docs = 1
+
+" When on, only completions that match the current word at the given point will
+" be returned. Turn this off to get all results, so that you can filter on the 
+" client side. Default: 1
+let g:deoplete#sources#ternjs#filter = 0
+
+" Whether to use a case-insensitive compare between the current word and 
+" potential completions. Default 0
+let g:deoplete#sources#ternjs#case_insensitive = 1
+
+" When completing a property and no completions are found, Tern will use some 
+" heuristics to try and return some properties anyway. Set this to 0 to 
+" turn that off. Default: 1
+let g:deoplete#sources#ternjs#guess = 0
+
+" Determines whether the result set will be sorted. Default: 1
+let g:deoplete#sources#ternjs#sort = 0
+
+" When disabled, only the text before the given position is considered part of 
+" the word. When enabled (the default), the whole variable name that the cursor
+" is on will be included. Default: 1
+let g:deoplete#sources#ternjs#expand_word_forward = 0
+
+" Whether to ignore the properties of Object.prototype unless they have been 
+" spelled out by at least two characters. Default: 1
+let g:deoplete#sources#ternjs#omit_object_prototype = 0
+
+" Whether to include JavaScript keywords when completing something that is not 
+" a property. Default: 0
+let g:deoplete#sources#ternjs#include_keywords = 1
+
+" If completions should be returned when inside a literal. Default: 1
+let g:deoplete#sources#ternjs#in_literal = 0
+
+
+"Add extra filetypes
+let g:deoplete#sources#ternjs#filetypes = [
+                \ 'jsx',
+                \ 'javascript.jsx',
+                \ 'vue',
+                \ '...'
+                \ ]
+
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " " autocomplete for ELM
 "
@@ -168,6 +241,7 @@ function! ToggleFindNerd()
     exec ':NERDTreeFind'
   endif
 endfunction
+
 
 " If nerd tree is closed, find current file, if open, close it
 nmap <silent> <leader>f <ESC>:call ToggleFindNerd()<CR>
@@ -291,7 +365,7 @@ Plug 'ctrlpvim/ctrlp.vim'
   let g:ctrlp_working_path_mode = ''
   let g:ctrlp_dont_split = 'NERD_tree_2' " don't split these buffers
   let g:ctrlp_custom_ignore = {
-        \ 'dir':  '\v[\/]\.(git|hg|svn|gitkeep|docs\)$',
+        \ 'dir':  '\v[\/]\.(git|hg|svn|gitkeep|node_modules|deps|rel|docs\)$',
         \ 'file': '\v\.(exe|so|dll|log|gif|jpg|jpeg|png|psd|DS_Store|ctags|gitattributes)$'
         \ }
   " let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
@@ -545,7 +619,8 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/deps/
 
 "" to run tests on the same file
 ""map <C-k> :w <bar> !mix test -%:p -no-start<CR>
-nnoremap <C-t> :w<bar>:Mix test<CR>
+" nnoremap <C-t> :w<bar>:Mix test<CR>
+nnoremap <C-t> :e .<CR>
 
 "" to getout of TERMINAL mode in neovim
 :tnoremap <Esc> <C-\><C-n>
@@ -603,7 +678,8 @@ set noswapfile
 """" <F5>  - show buffers
 """"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:nnoremap <F5> :buffers<CR>:buffer<Space>
+" :nnoremap <F5> :buffers<CR>:buffer<Space>
+:nnoremap <F5> :Mix compile<CR>
 
 
 """"" BACKUP / TMP FILES  -> if you need backup anyway....
