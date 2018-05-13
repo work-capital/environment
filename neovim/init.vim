@@ -362,7 +362,7 @@ Plug 'ctrlpvim/ctrlp.vim'
   let g:ctrlp_working_path_mode = ''
   let g:ctrlp_dont_split = 'NERD_tree_2' " don't split these buffers
   let g:ctrlp_custom_ignore = {
-        \ 'dir':  '\v[\/]\.(git|hg|svn|gitkeep|node_modules|deps|rel|docs\)$',
+        \ 'dir':  '\v[\/]\.(node_modules\|git|hg|svn|gitkeep|deps|rel|docs\)$',
         \ 'file': '\v\.(exe|so|dll|log|gif|jpg|jpeg|png|psd|DS_Store|ctags|gitattributes)$'
         \ }
   " let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
