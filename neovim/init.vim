@@ -17,6 +17,11 @@ call plug#begin('~/.vim/plugged')
 " Autoformat code. try f3
 Plug 'Chiel92/vim-autoformat'
 
+" Theme colors for syntax (has Elixir !)
+Plug 'rakr/vim-one'
+colorscheme one
+set background=dark " for the dark version
+" set background=light " for the light version
 
 
 " Add VTerm and Term commands to open terminal easily
@@ -33,11 +38,16 @@ Plug 'wannesm/wmgraphviz.vim'
 Plug 'idris-hackers/idris-vim'
 
 Plug 'jpalardy/vim-slime'
+" https://github.com/jpalardy/vim-slime
 " ,rs	Send selected text to tmux
 " ,rv	Change tmux session, window, and pane attachment
 let g:slime_target = "tmux"
 let g:slime_no_mappings = 1   " we want C-c to not conflict with closing pane, so this deactivate default mappings
-"let g:slime_default_config = {"x": split($TMUX, ",")[0], "target_pane": ":.2"}
+let g:slime_dont_ask_default = 1
+let g:slime_default_config = {"socket_name": "y", "target_pane": ":"}
+"let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.2"}
+
+
 
 xmap <leader>s <Plug>SlimeRegionSend
 nmap <leader>s <Plug>SlimeMotionSend
@@ -416,7 +426,7 @@ let &t_AF="\e[38;5;%dm"
 set t_ut= " improve screen clearing by using the background color
 set background=dark
 syntax enable
-colorscheme molokai
+"colorscheme molokai
 set enc=utf-8
 let $TERM='screen-256color'
 
@@ -671,12 +681,11 @@ set noswapfile
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" BUFFERS HELPERS
-"""" <F5>  - show buffers
+"""" SAVE and RECOMPILE 
 """"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " :nnoremap <F5> :buffers<CR>:buffer<Space>
-:nnoremap <F5> :Mix compile<CR>
+:nnoremap <F5> :Mix compile<CR>:!ls<CR>
 
 
 """"" BACKUP / TMP FILES  -> if you need backup anyway....

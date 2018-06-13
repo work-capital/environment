@@ -7,3 +7,6 @@
 xinput set-prop "bcm5974" "libinput Tapping Enabled" 1
 
 ~/environment/keyboard/map-keyboard-debian.sh
+
+# map the key near "z"
+xmodmap -e "keycode 94 = grave asciitilde"
