@@ -27,21 +27,20 @@ set background=dark " for the dark version
 "(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
 "
 "if (empty($TMUX))
-  if (has("nvim"))
-  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-  " if exists('+termguicolors')
-     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  "   set termguicolors
-  " endif
+if (has("nvim"))
+"For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+" endif
+"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+" if exists('+termguicolors')
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+" call one#highlight('vimLineComment', '000000', '', 'italic')
+set termguicolors
 
-  " if (has("termguicolors"))
-     set termguicolors
   " endif
 "endif
 
@@ -451,7 +450,7 @@ set t_ut= " improve screen clearing by using the background color
 syntax enable
 "colorscheme molokai
 set enc=utf-8
-let $TERM='screen-256color'
+" let $TERM='screen-256color'
 
 " Highlighting line or number follows....
 set cul " highlight current line
@@ -467,6 +466,14 @@ set cul " highlight current line
 
 " Highlight current column
 set cuc
+
+" Set backgroud color after theme is loaded
+" https://stackoverflow.com/questions/8640276/how-do-i-change-my-vim-highlight-line-to-not-be-an-underline
+hi Normal guibg=#090912
+hi CursorColumn guibg=#222225
+hi CursorLine term=bold cterm=bold guibg=#191925
+
+" call one#highlight('vimLineComment', '000000', '', 'italic')
 
 " change vim cursor depending on the mode
 if has("unix")
