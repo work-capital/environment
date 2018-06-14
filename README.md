@@ -96,6 +96,10 @@ https://unix.stackexchange.com/questions/267885/how-do-i-scale-i3-window-manager
 ## Vi
 Install neovim before setup the dotfiles
 
+Copy manually the color schemas from https://github.com/rakr/vim-one to 
+~/.config/nvim/colors directory, and pay attention to the tmux configuration 
+to support true colors.
+
 
 ## Elixir
 
