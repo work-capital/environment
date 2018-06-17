@@ -19,6 +19,7 @@ Plug 'Chiel92/vim-autoformat'
 
 " Automatic closing of quotes, parenthesis, brackets, etc...
 Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-endwise'
 
 " Theme colors for syntax (has Elixir !)
 Plug 'rakr/vim-one'
