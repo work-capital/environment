@@ -17,6 +17,9 @@ call plug#begin('~/.vim/plugged')
 " Autoformat code. try f3
 Plug 'Chiel92/vim-autoformat'
 
+" Automatic closing of quotes, parenthesis, brackets, etc...
+Plug 'jiangmiao/auto-pairs'
+
 " Theme colors for syntax (has Elixir !)
 Plug 'rakr/vim-one'
 colorscheme one
@@ -127,7 +130,7 @@ Plug 'leafgarland/typescript-vim'
 
 " Enable deoplete at startup
 
-  let g:deoplete#enable_at_startup = 1
+  "let g:deoplete#enable_at_startup = 1
 
 """"""" Elm
 "Plug 'elmcast/elm-vim'
@@ -236,6 +239,10 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'mxw/vim-jsx'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'pangloss/vim-javascript'
+let g:javascript_plugin_flow = 1
+let g:jsx_ext_required = 0
+
+
 Plug 'Shutnik/jshint2.vim'
 Plug 'burnettk/vim-angular'
 Plug 'mtscout6/vim-cjsx'
@@ -402,6 +409,7 @@ Plug 'ctrlpvim/ctrlp.vim'
   " let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co'] " if you want to use git for this rather than ag
   " AcceptSelection("r") means to replace. if you want to accept and vertical
   " open, change to AcceptSelection("v")
+  " let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_prompt_mappings = {
         \ 'AcceptSelection("e")': ['<c-e>', '<c-space>'],
