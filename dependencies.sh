@@ -11,6 +11,11 @@ apt-get install build-essential autoconf libncurses5-dev openssl libssl-dev fop 
 apt-get install htop iftop iotop g++ gcc make libwxbase3.0-0 libwxgtk3.0-0 curl autossh sudo xfonts-terminus -y
 apt-get install curl
 
+# install i3-wm with it's dependencies
+apt-get install i3-wm i3status suckless-tools
+
+
+
 
 # ERLANG
 # wget https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_19.3-1~ubuntu~xenial_amd64.deb
@@ -31,7 +36,8 @@ apt-get install curl
 # after in nvim, :UpdateRemotePlugins
 
 apt-get install python3-pip
-pip3 install neovim
+apt-get install gconf2    # used to change cursor types
+
 
 
 #Save current dir
@@ -57,6 +63,10 @@ apt-get install libtool libtool-bin autoconf automake cmake libncurses5-dev g++ 
 # to run ctrl-p VIM plugin
 apt-get install silversearcher-ag-el
 
+# vi neoplete plugin dependencies
+
+pip3 install neovim
+pip3 install --upgrade neovim
 #Restore dir
 popd
 

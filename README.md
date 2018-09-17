@@ -156,5 +156,14 @@ http://stackoverflow.com/questions/12973777/how-to-run-a-shell-script-at-startup
 See [here](https://xaizek.github.io/2016-08-13/big-list-of-vim-like-software/)
 for more VI-like applications
 
+# ONE SCHEME
+
+Clone 'one' color scheme and save the one.vim file into the .config/nvim/colors
+folder
 
 
+# UPDATE NEOPLETE
+Install python support for vim, see doc in the link below: 
+
+
+https://github.com/Shougo/deoplete.nvim
