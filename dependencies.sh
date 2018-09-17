@@ -9,6 +9,8 @@ apt-get update
 #apt-get install gnome-terminal -y
 apt-get install build-essential autoconf libncurses5-dev openssl libssl-dev fop xsltproc unixodbc-dev git tmux ranger xbacklight zsh -y
 apt-get install htop iftop iotop g++ gcc make libwxbase3.0-0 libwxgtk3.0-0 curl autossh sudo xfonts-terminus -y
+apt-get install curl
+
 
 # ERLANG
 # wget https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_19.3-1~ubuntu~xenial_amd64.deb
