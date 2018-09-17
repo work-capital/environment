@@ -63,8 +63,10 @@ apt-get install libtool libtool-bin autoconf automake cmake libncurses5-dev g++ 
 # to run ctrl-p VIM plugin
 apt-get install silversearcher-ag-el
 
-# vi neoplete plugin dependencies
+# slack dependency
+apt-get install apt-transport-https
 
+# vi neoplete plugin dependencies
 pip3 install neovim
 pip3 install --upgrade neovim
 #Restore dir
