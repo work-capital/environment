@@ -9,7 +9,8 @@ apt-get update
 #apt-get install gnome-terminal -y
 apt-get install build-essential autoconf libncurses5-dev openssl libssl-dev fop xsltproc unixodbc-dev git tmux ranger xbacklight zsh -y
 apt-get install htop iftop iotop g++ gcc make libwxbase3.0-0 libwxgtk3.0-0 curl autossh sudo xfonts-terminus -y
-apt-get install curl
+apt-get install fonts-hack-ttf -y
+apt-get install curl -y
 
 # install i3-wm with it's dependencies
 apt-get install i3-wm i3status suckless-tools
