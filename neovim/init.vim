@@ -17,9 +17,36 @@ call plug#begin('~/.vim/plugged')
 " Autoformat code. try f3
 Plug 'Chiel92/vim-autoformat'
 
+" VUE sintax highlighting
+Plug 'posva/vim-vue'
+" Optimize VIM speed for VUE
+let g:vue_disable_pre_processors=1 
+
 " Automatic closing of quotes, parenthesis, brackets, etc...
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-endwise'
+Plug 'jiangmiao/auto-pairs' " all tags
+
+Plug 'tpope/vim-endwise'    " for elixir
+
+Plug 'alvan/vim-closetag'   " for html tags
+" filenames like *.xml, *.html, *.xhtml, ...
+" These are the file extensions where this plugin is enabled.
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.js'
+" filenames like *.xml, *.xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx, *.js'
+" filetypes like xml, html, xhtml, ...
+" These are the file types where this plugin is enabled.
+let g:closetag_filetypes = 'html,xhtml,phtml'
+" filetypes like xml, xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+" integer value [0|1]
+" This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
+let g:closetag_emptyTags_caseSensitive = 1
+" Shortcut for closing tags, default is '>'
+let g:closetag_shortcut = '>'
+" Add > at current position without closing the current tag, default is ''
+let g:closetag_close_shortcut = '<leader>>'
 
 " Theme colors for syntax (has Elixir !)
 Plug 'rakr/vim-one'
@@ -87,7 +114,13 @@ nmap <leader>ss <Plug>SlimeLineSend
 Plug 'slime-lang/vim-slime-syntax'
 
 """""" Typescript
-Plug 'mhartington/nvim-typescript'
+
+" This plugin was giving an error:
+" https://github.com/mhartington/nvim-typescript/issues/50
+" Plug 'mhartington/nvim-typescript'
+"
+"
+"
 " Plug 'Shougo/vimproc.vim'
 " Plug 'Quramy/tsuquyomi'
 " Plug
@@ -126,7 +159,7 @@ Plug 'tomasr/molokai'
 
 
 " Plug 'mhartington/nvim-typescript'
-Plug 'leafgarland/typescript-vim'
+" Plug 'leafgarland/typescript-vim'
 
 
 " Enable deoplete at startup
@@ -231,7 +264,7 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 
 """"""" Elm
-Plug 'lambdatoast/elm.vim'
+" Plug 'lambdatoast/elm.vim'
 
 """"""" JavaScript
 Plug 'claco/jasmine.vim'
@@ -247,7 +280,7 @@ let g:jsx_ext_required = 0
 Plug 'Shutnik/jshint2.vim'
 Plug 'burnettk/vim-angular'
 Plug 'mtscout6/vim-cjsx'
-Plug 'ElmCast/elm-vim'
+" Plug 'ElmCast/elm-vim'
 
 """"""" Web Development (HTML/CSS/preprocessors/etc)
 Plug 'aaronjensen/vim-sass-status'
@@ -295,7 +328,8 @@ autocmd BufNewFile,BufReadPost *.md,*.markdown set filetype=markdown
 autocmd FileType markdown set tw=80
 
 """"""" Ansible
-Plug 'chase/vim-ansible-yaml'
+"Plug 'chase/vim-ansible-yaml'
+Plug 'stephpy/vim-yaml'
 
 """"""" Dockerfile
 Plug 'ekalinin/Dockerfile.vim'
@@ -311,6 +345,10 @@ Plug 'tfnico/vim-gradle'
 
 """"""" Terraform
 Plug 'markcornick/vim-terraform'
+
+""""""" Solidity (ethereum)
+Plug 'tomlion/vim-solidity'
+
 
 """"" End Filetypes ====================
 

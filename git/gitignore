@@ -71,4 +71,3 @@ src/counter_aggregate.erl
 mix.lock
 *.aof
 dump.rdb
-rel
