@@ -12,6 +12,9 @@ if ! exists("mapleader")
 inoremap <C-s> <esc>:w<cr>
 nnoremap <C-s> :w<cr>
 
+" open tree in the current dir
+inoremap <C-k> <esc>:e .<cr>
+nnoremap <C-k> :e .<cr>
 
 call plug#begin('~/.vim/plugged')
 " Autoformat code. try f3
@@ -227,7 +230,7 @@ Plug 'derekwyatt/vim-scala'
 Plug 'vim-ruby/vim-ruby'
 
 """"""" Elixir
-Plug 'elixir-lang/vim-elixir'
+Plug 'elixir-editors/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 
 """"""" Elm
