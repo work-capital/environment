@@ -123,14 +123,13 @@ Plug 'slime-lang/vim-slime-syntax'
 "
 " Plug 'Shougo/vimproc.vim'
 " Plug 'Quramy/tsuquyomi'
-" Plug
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+"
+" Place deoplete first, then autocomplete-flow
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'wokalski/autocomplete-flow'
+" You will also need the following for function argument completion:
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
 let g:deoplete#enable_at_startup = 1
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "   let g:deoplete#enable_at_startup = 1
