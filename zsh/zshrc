@@ -6,8 +6,8 @@ export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="gianu"
-ZSH_THEME="avit"
-#ZSH_THEME="refined"
+#ZSH_THEME="avit"
+ZSH_THEME="refined"
 #ZSH_THEME="refined"
 
 
