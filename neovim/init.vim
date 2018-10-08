@@ -170,10 +170,16 @@ Plug 'tomasr/molokai'
 
 
 """"""" Auto complete
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
+
+
+
+"Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 " Set bin if you have many instalations
-let g:deoplete#sources#ternjs#tern_bin = '/path/to/tern_bin'
+" let g:deoplete#sources#ternjs#tern_bin = '/path/to/tern_bin'
 let g:deoplete#sources#ternjs#timeout = 1
 
 " Whether to include the types of the completions in the result data. Default: 0
@@ -248,6 +254,11 @@ let g:deoplete#sources#ternjs#filetypes = [
 "     return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
 " endfunction
 
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = [
+  \ 'tern#Complete',
+  \ 'jspc#omni'
+\]
 
 """"""" Purescript
 "Plug 'raichoo/purescript-vim'
