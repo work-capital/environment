@@ -169,7 +169,8 @@ Plug 'tomasr/molokai'
 "Plug 'elmcast/elm-vim'
 
 
-""""""" Auto complete
+""""""" JavaScript Auto complete
+" https://www.gregjs.com/vim/2016/neovim-deoplete-jspc-ultisnips-and-tern-a-config-for-kickass-autocompletion/
 Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
@@ -260,11 +261,25 @@ let g:deoplete#omni#functions.javascript = [
   \ 'jspc#omni'
 \]
 
+
+" adjust which sources Deoplete pulls from when showing completions
+" set completeopt=longest,menuone,preview
+" let g:deoplete#sources = {}
+" let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
+" let g:tern#command = ['tern']
+" let g:tern#arguments = ['--persistent']
+
+" Use Tab for everything (except UltiSnips)!
+" autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+" let g:UltiSnipsExpandTrigger="<C-j>"
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+
 """"""" Purescript
 "Plug 'raichoo/purescript-vim'
 
 """"""" Scala
-Plug 'derekwyatt/vim-scala'
+" Plug 'derekwyatt/vim-scala'
 
 """"""" Ruby
 Plug 'vim-ruby/vim-ruby'
