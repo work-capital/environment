@@ -1,4 +1,4 @@
 #!/bin/bash
-~/environment/video/two-monitors-ajust.sh
+~/environment/video/dual-video.sh
 ~/environment/keyboard/map-keyboard-debian.sh
 
